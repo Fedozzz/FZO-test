@@ -7,7 +7,7 @@ on:
       jobs:
         claude-test:
             runs-on: ubuntu-latest
-                if: github.event.comment.body == '@claude help'
+                if: github.event.comment.body == '@claude'
                     steps:
                           - uses: actions/checkout@v4
 
