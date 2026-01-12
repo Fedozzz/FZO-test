@@ -1,0 +1,17 @@
+name: Claude Code Integration Test
+
+on:
+  issue_comment:
+      types: [created]
+
+      jobs:
+        claude-test:
+            runs-on: ubuntu-latest
+                if: github.event.comment.body == '@claude help'
+                    steps:
+                          - uses: actions/checkout@v4
+
+                                      - name: Run Claude Code Action
+                                              uses: anthropics/claude-code-action@v1
+                                                      with:
+                                                                anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
